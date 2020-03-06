@@ -39,12 +39,11 @@ module.exports.create = function(req,res){
             })
         }
         else{
-            return res.redirect('back');
+            return res.redirect('/users/sign-in');
         }
         
       })
 }
 module.exports.createSession = function(req,res){
-    console.log(req.body);
-    res.redirect('back');
+    return res.redirect('/');
 }
