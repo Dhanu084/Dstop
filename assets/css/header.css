@@ -1,0 +1,11 @@
+header {
+  background-color: blueviolet;
+  color: white; }
+  header a {
+    color: white;
+    text-decoration: none; }
+  header ul {
+    list-style: none; }
+    header ul li {
+      display: inline-block;
+      margin: 4px; }

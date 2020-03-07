@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-</head>
-<body>
-    <%- include('_header') %>
-    <h1> Dstop | <%= title %></h1>
-    <%- include('_footer') %>
-</body>
-</html>
+
+    <section id="feed-posts">
+        <h4>Posts</h4>
+        <form action="/posts/create" id="new-post-form" method="POST">
+            <textarea name="content"  cols="50" rows="3" placeholder="Type here..."></textarea><br>
+            <button value="submit"> Post </button>
+        </form>
+    </section>
+
+    <section id="available-posts">
+        
+    </section>

@@ -7,20 +7,31 @@ module.exports.profile = function(req,res){
 }
 
 module.exports.signUp = function(req,res){
+   if(req.isAuthenticated()){
+       return res.redirect('/users/profile');
+   }
+   else{
     return res.render('user_sign_up',{
-        title:"Dstop | SignUp"
+        title:'Dstop | User sign up'
     })
+   }
+   
 }
 
 
 module.exports.signIn = function(req,res){
-    return res.render('user_sign_in',{
-        title:"Dstop | SignIn"
-    })
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
+    else{
+     return res.render('user_sign_in',{
+         title:"Dstop | SignIn"
+     })
+    }
 }
 
 module.exports.create = function(req,res){
-    console.log(req.body);
+    // console.log(req.body);
     if(req.body.password!=req.body.confirm_password){
         return res.redirect('back');
     }
@@ -39,11 +50,16 @@ module.exports.create = function(req,res){
             })
         }
         else{
-            return res.redirect('/users/sign-in');
+            return res.redirect('/users/profile');
         }
         
       })
 }
 module.exports.createSession = function(req,res){
-    return res.redirect('/');
+    return res.redirect('/users/profile');
 }
+
+module.exports.destroySession = function (req,res) {
+    req.logOut();
+    return res.redirect('/');
+  }

@@ -5,6 +5,7 @@ router.get('/profile',passport.checkAuthentication,require('../controllers/users
 router.get('/sign-up',require('../controllers/users-controller').signUp);
 router.get('/sign-in',require('../controllers/users-controller').signIn);
 router.post('/create',require('../controllers/users-controller').create);
+router.get('/sign-out',require('../controllers/users-controller').destroySession);
 
 //use passport as a middleware to authenticate
 router.post('/create-session',passport.authenticate(

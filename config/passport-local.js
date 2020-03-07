@@ -36,7 +36,7 @@ passport.deserializeUser(function(id,done){
             console.log("Error in finding user");
             return done(null,false);
         }
-        return done(null,user.id);
+        return done(null,user);
     });
 });
 
@@ -49,12 +49,14 @@ passport.checkAuthentication = function(req,res,next){
     return res.redirect('/users/sign-in');
 }
 
-passport.setAuthenticated = function(req,res,next){
+passport.setAuthenticatedUser = function(req,res,next){
     if(req.isAuthenticated()){
         //req.user contaisn the current signed in user from the cookies. We are just sending it to locals so that the 
         //it can be using in the views
+        console.log(req.user);
         res.locals.user = req.user;
 
     }
+    next();
 }
 module.exports = passport;
