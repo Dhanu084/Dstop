@@ -1,4 +1,4 @@
-const User = require('../models/users_schema');
+const User = require('../models/users');
 
 module.exports.profile = function(req,res){
     res.render('user_profile',{

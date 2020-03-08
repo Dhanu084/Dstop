@@ -1,4 +1,11 @@
 body {
   margin: 0; }
   body #layout-main {
-    height: 82vh; }
+    height: 82vh;
+    margin-bottom: 4px; }
+  body #feed-posts {
+    margin-bottom: 15px; }
+  body #available-posts {
+    height: 300px;
+    width: 50%;
+    overflow-y: scroll; }

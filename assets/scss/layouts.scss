@@ -3,5 +3,14 @@ body{
     
     #layout-main{
         height: 82vh;
+        margin-bottom: 4px;
+    }
+    #feed-posts{
+        margin-bottom: 15px;;
+    }
+    #available-posts{
+        height: 300px;
+        width: 50%;
+        overflow-y: scroll;
     }
 }

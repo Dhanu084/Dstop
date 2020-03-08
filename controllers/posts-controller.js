@@ -1,6 +1,7 @@
 const Posts = require('../models/posts');
 
 module.exports.create = function(req,res){
+    console.log(req.user);
     Posts.create({
         content:req.body.content,
         user:req.user._id
@@ -11,5 +12,5 @@ module.exports.create = function(req,res){
         }
     })
 
-    return res.redirect('back');
+    return res.redirect('/');
 }

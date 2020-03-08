@@ -1,7 +1,7 @@
 const passport = require('passport');
 
 const LocalStrategy = require('passport-local');
-const User = require('../models/users_schema');
+const User = require('../models/users');
 
 //authentication using password
 passport.use(new LocalStrategy({
