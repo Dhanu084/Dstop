@@ -1,4 +1,7 @@
 footer {
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
   background-color: #4d335f; }
   footer a {
     color: white; }

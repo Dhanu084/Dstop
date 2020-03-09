@@ -6,6 +6,13 @@ body {
   body #feed-posts {
     margin-bottom: 15px; }
   body #available-posts {
-    height: 300px;
+    height: auto;
     width: 50%;
-    overflow-y: scroll; }
+    margin-bottom: 80px; }
+    body #available-posts .post-comments-list li::before {
+      content: 'c';
+      color: #4d335f;
+      display: inline;
+      font-weight: bolder; }
+  body ul {
+    list-style: none; }

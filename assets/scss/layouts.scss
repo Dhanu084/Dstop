@@ -9,8 +9,19 @@ body{
         margin-bottom: 15px;;
     }
     #available-posts{
-        height: 300px;
+        height: auto;
         width: 50%;
-        overflow-y: scroll;
+        margin-bottom: 80px;
+        .post-comments-list{
+            li::before{
+                content: 'c';
+                color:rgb(77, 51, 95);;
+                display:inline;
+                font-weight: bolder;
+            }
+        }
+    }
+    ul{
+        list-style: none;
     }
 }
