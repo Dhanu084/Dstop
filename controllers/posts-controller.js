@@ -6,10 +6,12 @@ module.exports.create =  async function(req,res){
         content:req.body.content,
         user:req.user._id
     })
+    req.flash('success','post published');
     return res.redirect('/');
     }
     catch(err){
-        console.log(err);
+        req.flash('error',err);
+        return;
     }
    
     
@@ -22,10 +24,12 @@ module.exports.destroy = async function(req,res){
         if(posts.user == req.user.id){
             posts.remove();
             await Comments.deleteMany({posts:req.params.id},function(err){
+                req.flash('success','post deleted');
                 return res.redirect('back');
             })
         }
         else{
+            req.flash('error','post cannot be deleted');
             res.redirect('back');
         }
     }
