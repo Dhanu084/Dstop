@@ -8,18 +8,29 @@ body{
     #feed-posts{
         margin-bottom: 15px;;
     }
-    #available-posts{
-        height: auto;
-        width: 50%;
-        margin-bottom: 80px;
-        .post-comments-list{
-            li::before{
-                content: 'c';
-                color:rgb(77, 51, 95);;
-                display:inline;
-                font-weight: bolder;
+    #posts{
+        display: flex;
+        #posts-container{
+            width: 70%;
+        #available-posts{
+            height: auto;
+            width: 100%;
+            margin-bottom: 80px;
+            .post-comments-list{
+                li::before{
+                    content: 'c';
+                    color:rgb(77, 51, 95);;
+                    display:inline;
+                    font-weight: bolder;
+                }
             }
         }
+    }
+    }
+    #user-friends{
+        margin-left: 10%;
+        margin-bottom: 55px;
+        height: 100%;
     }
     ul{
         list-style: none;

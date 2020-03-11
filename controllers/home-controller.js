@@ -1,4 +1,5 @@
-const Posts = require('../models/posts')
+const Posts = require('../models/posts');
+const User = require('../models/users');
 module.exports.home = function (req,res) {
     Posts.find({}).populate('user').populate({
         path:'comments',
@@ -7,13 +8,18 @@ module.exports.home = function (req,res) {
         }
     }).exec(function(err,posts){
         //console.log(posts);
-        if(err){
-            console.log(err);
-            return;
-        }
-        return res.render('home',{
-            title:'home',
-            posts:posts
+        User.find({},function(err,users){
+
+            if(err){
+                console.log(err);
+                return;
+            }
+            return res.render('home',{
+                title:'home',
+                posts:posts,
+                all_users : users
+            })
         })
+        
     });
   }

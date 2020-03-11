@@ -1,7 +1,17 @@
 <link rel="stylesheet" href="/css/user_profile.css">
     <h4><%= title %></h4>
     <div class="card">
-        <p><%= user.name %></p>
-        <p><%= user.email %></p>
+        <p><%= profile_user.name %></p>
+        <p><%= profile_user.email %></p>
+    </div>
+
+    <div class="card">
+        <% if(profile_user.id == user.id) {%>
+            <form action="/users/update/<%= user.id %>" method="POST">
+                <input type="text" name="name" placeholder="name" value="<%= profile_user.name%>">
+                <input type="email" name="email" placeholder="email" value="<%= profile_user.email %>">
+                <button value="submit">update</button>
+            </form>
+        <%}%>
     </div>
     

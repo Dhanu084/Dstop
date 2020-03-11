@@ -5,14 +5,22 @@ body {
     margin-bottom: 4px; }
   body #feed-posts {
     margin-bottom: 15px; }
-  body #available-posts {
-    height: auto;
-    width: 50%;
-    margin-bottom: 80px; }
-    body #available-posts .post-comments-list li::before {
-      content: 'c';
-      color: #4d335f;
-      display: inline;
-      font-weight: bolder; }
+  body #posts {
+    display: flex; }
+    body #posts #posts-container {
+      width: 70%; }
+      body #posts #posts-container #available-posts {
+        height: auto;
+        width: 100%;
+        margin-bottom: 80px; }
+        body #posts #posts-container #available-posts .post-comments-list li::before {
+          content: 'c';
+          color: #4d335f;
+          display: inline;
+          font-weight: bolder; }
+  body #user-friends {
+    margin-left: 10%;
+    margin-bottom: 55px;
+    height: 100%; }
   body ul {
     list-style: none; }
