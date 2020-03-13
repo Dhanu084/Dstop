@@ -14,6 +14,7 @@ module.exports.create =  async function(req,res){
             message:"Post Created"
         })
     }
+    
     req.flash('success','post published');
     return res.redirect('/');
     }
@@ -28,13 +29,21 @@ module.exports.create =  async function(req,res){
 module.exports.destroy = async function(req,res){
     console.log(req.user.id);
     try{
-        let posts = await Posts.findById(req.params.id)
-        if(posts.user == req.user.id){
-            posts.remove();
-            await Comments.deleteMany({posts:req.params.id},function(err){
-                req.flash('success','post deleted');
-                return res.redirect('back');
-            })
+        let post = await Posts.findById(req.params.id);
+        if(post.user == req.user.id){
+            post.remove();
+            await Comments.deleteMany({post:req.params.id})
+            console.log(req.params.id);
+            if(req.xhr){
+                return res.status(200).json({
+                    data:{
+                        post_id:req.params._id
+                    },
+                    message:"Post Deleted"
+                })
+            }
+            req.flash('success','post deleted');
+            return res.redirect('back');
         }
         else{
             req.flash('error','post cannot be deleted');

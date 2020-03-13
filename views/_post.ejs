@@ -1,8 +1,8 @@
    
     
-            <li> 
+            <li id="post-<%= post._id %>"> 
                 <% if((locals.user) && (locals.user.id==post.user.id)) {%>
-                <small><a href="/posts/destroy/<%= post.id %>">x</a></small>
+                <small><a class="delete-post-button" href="/posts/destroy/<%= post.id %>">x</a></small>
                 <%}%>
                 <p class="card-title"><%= post.content %></p>
                 <p><small><%= post.user.name%></small></p>
@@ -19,15 +19,8 @@
                     <h6>Comments</h6>
                     <ul id="post-comments-list-<%= post._id%>" class=card>
                         
-                        <% for (let comment of post.comments){%>
-                        <li>
-                            <% if(locals.user && locals.user.id == comment.user.id) {%>
-                            <a href="/comments/destroy/<%= comment.id %>">x</a>
-                            <%}%>
-                            <label for="comment-content"><small><b><%= comment.user.name %></b></small></label>
-                            <p id="comment-content"><%= comment.content %></p>
-                            
-                        </li>
+                        <% for ( comment of post.comments){%>
+                                <%-include('_comments')-%>
                         <%}%>
                     </ul>
                 </div>

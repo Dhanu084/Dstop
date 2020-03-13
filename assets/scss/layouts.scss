@@ -16,6 +16,10 @@ body{
             height: auto;
             width: 100%;
             margin-bottom: 80px;
+            #feeds{
+                height: 100%;
+                width: 100%;
+            }
             .post-comments-list{
                 li::before{
                     content: 'c';

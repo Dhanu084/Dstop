@@ -10,21 +10,19 @@
         <%}%>
     </section>
 
-    <section id="available-posts">
+    <section id="available-posts" class="card">
         <h4>Latest Feeds</h4><br>
         
-    <div class="card">
         <ul>
-        <% for(var post of posts) { %>
-            <%-include('_post.ejs')-%>
-        <%}%>
-        
+            <% for(post of posts) { %>
+                <%-include('_post')-%>
+            <%}%>        
         </ul>
     </section>
 </section>
 
 
-    <section id="user-friends">
+    <section id="user-friends"> 
         <h4>Friends</h4>
         <%= console.log(all_users)%>
         <% if(locals.user){%>

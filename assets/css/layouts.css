@@ -13,6 +13,9 @@ body {
         height: auto;
         width: 100%;
         margin-bottom: 80px; }
+        body #posts #posts-container #available-posts #feeds {
+          height: 100%;
+          width: 100%; }
         body #posts #posts-container #available-posts .post-comments-list li::before {
           content: 'c';
           color: #4d335f;
