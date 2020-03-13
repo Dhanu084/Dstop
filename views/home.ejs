@@ -12,7 +12,14 @@
 
     <section id="available-posts">
         <h4>Latest Feeds</h4><br>
-        <%- include('_posts') %>
+        
+    <div class="card">
+        <ul>
+        <% for(var post of posts) { %>
+            <%-include('_post.ejs')-%>
+        <%}%>
+        
+        </ul>
     </section>
 </section>
 
@@ -28,3 +35,5 @@
         <%}%>
     </section>
 </section>
+
+<script src="/js/home_posts.js"></script>

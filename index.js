@@ -21,7 +21,7 @@ app.use(SassMiddleware({
 app.use(express.urlencoded());
 app.use(cookieParser());
 
-//extract style and scriptsfrom subpages into layout
+//extract style and scripts from subpages into layout
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 

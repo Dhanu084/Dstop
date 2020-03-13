@@ -1,6 +1,5 @@
-<% for(var post of posts) { %>
-    <div class="card">
-        <ul>
+   
+    
             <li> 
                 <% if((locals.user) && (locals.user.id==post.user.id)) {%>
                 <small><a href="/posts/destroy/<%= post.id %>">x</a></small>
@@ -33,6 +32,5 @@
                     </ul>
                 </div>
             </li>
-        </ul>
-    </div>
-<% } %>
+            
+    
