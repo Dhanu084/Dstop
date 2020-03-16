@@ -27,7 +27,7 @@ module.exports.create =  async function(req,res){
 }
 
 module.exports.destroy = async function(req,res){
-    console.log(req.user.id);
+        
     try{
         let post = await Posts.findById(req.params.id);
         if(post.user == req.user.id){
