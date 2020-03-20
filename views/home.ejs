@@ -14,17 +14,18 @@
         <h4>Latest Feeds</h4><br>
         
         <ul>
+            <div class="card-title" style="margin-bottom: 50px;">
             <% for(post of posts) { %>
                 <%-include('_post')-%>
-            <%}%>        
+            <%}%>
+        </div>        
         </ul>
     </section>
 </section>
 
 
     <section id="user-friends"> 
-        <h4>Friends</h4>
-        <%= console.log(all_users)%>
+        <h4>Friends</h4>    
         <% if(locals.user){%>
         <% for(u of all_users){%>
             <% if(u.id == locals.user.id) continue %>

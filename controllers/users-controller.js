@@ -89,7 +89,7 @@ module.exports.update = async function(req,res){
                     console.log(err+" "+"multer error");
                     return;
                 }
-                console.log(req.file);
+                //console.log(req.file);
                 user.name = req.body.name;
                 user.email = req.body.email;
 
