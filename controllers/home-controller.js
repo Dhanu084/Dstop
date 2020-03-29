@@ -31,11 +31,14 @@ const User = require('../models/users');
             path:'comments',
             populate:{
                 path:'user'
+            },
+            populate: {
+                path: 'likes'
             }
-        });
+        }).populate('likes');
     
         let users = await User.find({});
-    
+        console.log(users);
         return res.render('home',{
             title:'home',
             posts:posts,
